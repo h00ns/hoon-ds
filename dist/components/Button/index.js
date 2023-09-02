@@ -23,10 +23,18 @@ export var Component = styled.button(templateObject_1 || (templateObject_1 = __m
     return hoverColor &&
         "\n    &:hover {\n      background-color: ".concat(hoverColor, "\n    }\n  ");
 });
+/**
+ *  @Component - Button
+ *  @props text - 버튼 텍스트 (string)
+ *  @props variant - 버튼 스타일 (ButtonVariant)
+ *  @props type - 버튼 타입 ('button' | 'submit' | 'reset')
+ *  @props disabled - 버튼 비활성화 (boolean)
+ *  @props onClick - 버튼 클릭 이벤트 (() => void)
+ */
 var Button = function (_a, ref) {
     var text = _a.text, _b = _a.variant, variant = _b === void 0 ? ButtonVariant.PRIMARY : _b, _c = _a.type, type = _c === void 0 ? "submit" : _c, _d = _a.disabled, disabled = _d === void 0 ? false : _d, onClick = _a.onClick;
     var _e = useGetButtonProps(variant, disabled), backgroundColor = _e[0], color = _e[1], borderColor = _e[2], hoverColor = _e[3];
-    return (_jsx(Component, __assign({ style: { backgroundColor: backgroundColor, color: color, borderColor: borderColor }, hoverColor: hoverColor }, { children: "\uBC84\uD2BC" })));
+    return (_jsx(Component, __assign({ style: { backgroundColor: backgroundColor, color: color, borderColor: borderColor }, hoverColor: hoverColor, type: type, onClick: onClick }, { children: text })));
 };
 export default forwardRef(Button);
 var templateObject_1;

@@ -2,7 +2,7 @@
 import { ButtonVariantType } from "./constants";
 type Props = {
     readonly text: string;
-    readonly variant: ButtonVariantType;
+    readonly variant?: ButtonVariantType;
     readonly type?: "button" | "submit" | "reset";
     readonly disabled?: boolean;
     readonly onClick?: () => void;

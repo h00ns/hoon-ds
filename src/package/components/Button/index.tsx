@@ -1,15 +1,13 @@
 import styled from "@emotion/styled";
-import { ForwardedRef, forwardRef } from "react";
+import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import { ButtonVariant, ButtonVariantType } from "./constants";
 import { useGetButtonProps } from "./hooks";
 
-type Props = {
+interface Props extends HTMLAttributes<HTMLButtonElement> {
   readonly text: string;
   readonly variant?: ButtonVariantType;
-  readonly type?: "button" | "submit" | "reset";
   readonly disabled?: boolean;
-  readonly onClick?: () => void;
-};
+}
 
 export const Component = styled.button<{ hoverColor: string }>`
   padding: 10px 12px;
@@ -34,19 +32,16 @@ export const Component = styled.button<{ hoverColor: string }>`
 
 /**
  *  @Component - Button
- *  @props text - 버튼 텍스트 (string)
- *  @props variant - 버튼 스타일 (ButtonVariant)
- *  @props type - 버튼 타입 ('button' | 'submit' | 'reset')
- *  @props disabled - 버튼 비활성화 (boolean)
- *  @props onClick - 버튼 클릭 이벤트 (() => void)
+ *  @props text - 버튼 텍스트 {string}
+ *  @props variant - 버튼 스타일 {ButtonVariant}
+ *  @props disabled - 버튼 비활성화 {boolean}
  */
 const Button = (
   {
     text,
     variant = ButtonVariant.PRIMARY,
-    type = "submit",
     disabled = false,
-    onClick,
+    ...htmlButtonAttributes
   }: Props,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
@@ -59,8 +54,7 @@ const Button = (
     <Component
       style={{ backgroundColor, color, borderColor }}
       hoverColor={hoverColor}
-      type={type}
-      onClick={onClick}
+      {...htmlButtonAttributes}
     >
       {text}
     </Component>

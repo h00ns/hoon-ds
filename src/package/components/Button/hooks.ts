@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import { ButtonVariantType } from "./constants";
-import { gray, primary } from "../../styles/Color";
+import { ButtonVariant, ButtonVariantType } from "./constants";
+import { blue, gray, green, primary, red, white } from "../../styles/Color";
 
 export const useGetButtonProps = (
   variant: ButtonVariantType,
@@ -8,10 +8,22 @@ export const useGetButtonProps = (
 ) => {
   const [backgroundColor, color, borderColor, hoverColor] = useMemo(() => {
     if (disabled) {
-      return [gray.gray2, gray.gray5, gray.gray3, gray.gray2];
+      return [gray.gray3, gray.gray5, gray.gray3, gray.gray1];
     }
-    return [gray.gray2, gray.gray5, gray.gray3, gray.gray2];
-  }, [variant]);
+
+    switch (variant) {
+      case ButtonVariant.PRIMARY:
+        return [primary.blue, white, primary.blue, blue.blue2];
+      case ButtonVariant.OUTLINE:
+        return [white, gray.gray6, gray.gray6, gray.gray2];
+      case ButtonVariant.RED:
+        return [red.red3, white, red.red3, red.red2];
+      case ButtonVariant.GRAY:
+        return [gray.gray6, white, gray.gray6, gray.gray5];
+      case ButtonVariant.GREEN:
+        return [green.green3, white, green.green3, green.green2];
+    }
+  }, [variant, disabled]);
 
   return [backgroundColor, color, borderColor, hoverColor];
 };
