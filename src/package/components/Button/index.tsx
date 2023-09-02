@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import { ButtonVariant, ButtonVariantType } from "./constants";
 import { useGetButtonProps } from "./hooks";
+import { black } from "../../styles/Color";
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   readonly text: string;
@@ -25,7 +26,7 @@ export const Component = styled.button<{ hoverColor: string }>`
     hoverColor &&
     `
     &:hover {
-      background-color: ${hoverColor}
+      background-color: ${hoverColor}!important;
     }
   `}
 `;

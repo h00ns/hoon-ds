@@ -1,12 +1,10 @@
-/// <reference types="react" />
+import { HTMLAttributes } from "react";
 import { ButtonVariantType } from "./constants";
-type Props = {
+interface Props extends HTMLAttributes<HTMLButtonElement> {
     readonly text: string;
     readonly variant?: ButtonVariantType;
-    readonly type?: "button" | "submit" | "reset";
     readonly disabled?: boolean;
-    readonly onClick?: () => void;
-};
+}
 export declare const Component: import("@emotion/styled").StyledComponent<{
     theme?: import("@emotion/react").Theme | undefined;
     as?: import("react").ElementType<any> | undefined;

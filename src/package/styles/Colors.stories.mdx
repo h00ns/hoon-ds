@@ -1,0 +1,59 @@
+import { Meta, ColorPalette, ColorItem } from "@storybook/blocks";
+
+<Meta title="Colors" />
+
+<h1>Color Palette</h1>
+
+<ColorPalette>
+  <ColorItem
+    title="white & black"
+    colors={{ white: "#FFFFFF", black: "#000000" }}
+  />
+  <ColorItem title="primary" colors={{ blue: "#1A6DFF", gray: "#717680" }} />
+  <ColorItem
+    title="blue"
+    subtitle="Blue Scale"
+    colors={{
+      blue1: "#EDF2FF",
+      blue2: "#C1D2FC",
+      blue3: "#4980F7",
+      blue4: "#0038B2",
+      blue5: "#01277A",
+    }}
+  />
+  <ColorItem
+    title="gray"
+    subtitle="Gray Scale"
+    colors={{
+      gray1: "#F6F6F6",
+      gray2: "#EEEEEE",
+      gray3: "#E2E2E2",
+      gray4: "#CBCBCB",
+      gray5: "#AFAFAF",
+      gray6: "#808080",
+      gray7: "#535353",
+    }}
+  />
+  <ColorItem
+    title="red"
+    subtitle="Red Scale"
+    colors={{
+      red1: "#FFCFCF",
+      red2: "#FF9B9B",
+      red3: "#FF5C5C",
+      red4: "#DF1D1D",
+      red5: "#BC0000",
+    }}
+  />
+  <ColorItem
+    title="green"
+    subtitle="Green Scale"
+    colors={{
+      green1: "#D9F4D2",
+      green2: "#A6DA98",
+      green3: "#34963C",
+      green4: "#236F2A",
+      green5: "#113D15",
+    }}
+  />
+</ColorPalette>

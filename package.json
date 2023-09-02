@@ -1,6 +1,6 @@
 {
   "name": "hoon-ds",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Hoon Design System",
   "private": false,
   "main": "dist/index.js",

@@ -1,6 +1,5 @@
 export const primary = {
   blue: "#1A6DFF",
-  black: "#15181E",
   gray: "#717680",
 } as const;
 
