@@ -1,6 +1,5 @@
 export declare const primary: {
     readonly blue: "#1A6DFF";
-    readonly black: "#15181E";
     readonly gray: "#717680";
 };
 export declare const blue: {

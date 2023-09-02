@@ -1,6 +1,6 @@
 {
-  "name": "hoon-ds",
-  "version": "0.0.6",
+  "name": "hoons-ds",
+  "version": "0.0.1",
   "description": "Hoon Design System",
   "private": false,
   "main": "dist/index.js",
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "https://github.com/h00ns/Design-System.git"
   },
+  "homepage": "hoons.site",
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",

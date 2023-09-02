@@ -32,7 +32,7 @@ import { useGetButtonProps } from "./hooks";
 export var Component = styled.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 10px 12px;\n  font-size: 14px;\n  border-radius: 8px;\n  border: 1px solid transparent;\n  cursor: pointer;\n\n  &:focus {\n    outline: none;\n  }\n\n  /* only hover */\n  ", "\n"], ["\n  padding: 10px 12px;\n  font-size: 14px;\n  border-radius: 8px;\n  border: 1px solid transparent;\n  cursor: pointer;\n\n  &:focus {\n    outline: none;\n  }\n\n  /* only hover */\n  ", "\n"])), function (_a) {
     var hoverColor = _a.hoverColor;
     return hoverColor &&
-        "\n    &:hover {\n      background-color: ".concat(hoverColor, "\n    }\n  ");
+        "\n    &:hover {\n      background-color: ".concat(hoverColor, "!important;\n    }\n  ");
 });
 /**
  *  @Component - Button

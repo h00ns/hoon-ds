@@ -2,34 +2,12 @@ import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import { ButtonVariant, ButtonVariantType } from "./constants";
 import { useGetButtonProps } from "./hooks";
-import { black } from "../../styles/Color";
 
 interface Props extends HTMLAttributes<HTMLButtonElement> {
   readonly text: string;
   readonly variant?: ButtonVariantType;
   readonly disabled?: boolean;
 }
-
-export const Component = styled.button<{ hoverColor: string }>`
-  padding: 10px 12px;
-  font-size: 14px;
-  border-radius: 8px;
-  border: 1px solid transparent;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-
-  /* only hover */
-  ${({ hoverColor }) =>
-    hoverColor &&
-    `
-    &:hover {
-      background-color: ${hoverColor}!important;
-    }
-  `}
-`;
 
 /**
  *  @Component - Button
@@ -61,5 +39,26 @@ const Button = (
     </Component>
   );
 };
+
+export const Component = styled.button<{ hoverColor: string }>`
+  padding: 10px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  /* only hover */
+  ${({ hoverColor }) =>
+    hoverColor &&
+    `
+    &:hover {
+      background-color: ${hoverColor}!important;
+    }
+  `}
+`;
 
 export default forwardRef(Button);
