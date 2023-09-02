@@ -11,7 +11,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 /**
  *  @Component - Badge
- *  @props variant - 뱃지 스타일 {string}
+ *  @props variant - 뱃지 스타일 {BadgeVariantType}
  *  @props text - 뱃지 텍스트 {string}
  */
 const Badge = (
