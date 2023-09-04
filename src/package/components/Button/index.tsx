@@ -44,7 +44,7 @@ const Button = (
 };
 
 const Component = styled.button<{ hoverColor: string }>`
-  padding: 10px 12px;
+  padding: 11px 12px;
   font-size: 14px;
   border-radius: ${Radius.MEDIUM};
   border: 1px solid transparent;

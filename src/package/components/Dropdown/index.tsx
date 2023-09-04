@@ -36,7 +36,7 @@ const Dropdown = (
     <Component>
       <SelectBox onClick={() => setIsOpen((prev) => !prev)} ref={selectRef}>
         {selectLabel || placeholder}
-        <Icon name={isOpen ? "chevron-up" : "chevron-down"} />
+        <Icon size="16px" name={isOpen ? "chevron-up" : "chevron-down"} />
       </SelectBox>
 
       {isOpen && (
@@ -62,7 +62,7 @@ const Component = styled.div`
 `;
 
 const SelectBox = styled.div`
-  padding: 10px 12px;
+  padding: 11px 12px;
   border: 1px solid ${gray.gray3};
   border-radius: ${Radius.MEDIUM};
   font-size: 14px;
@@ -72,6 +72,11 @@ const SelectBox = styled.div`
   column-gap: 12px;
   justify-content: space-between;
   align-items: center;
+`;
+
+const IconWrapper = styled.div`
+  width: 16px;
+  height: 16px;
 `;
 
 const OptionBox = styled.div`

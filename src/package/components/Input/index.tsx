@@ -12,11 +12,11 @@ const Input = (
   { variant = InputVariant.DEFAULT, ...inputHtmlAttributes }: Props,
   ref: ForwardedRef<HTMLInputElement>
 ) => {
-  const [backgroundColor, borderColor] = useGetInputProps(variant);
+  const [backgroundColor, borderColor, color] = useGetInputProps(variant);
 
   return (
     <Component
-      style={{ backgroundColor, borderColor }}
+      style={{ backgroundColor, borderColor, color }}
       disabled={variant === InputVariant.FIXED}
       {...inputHtmlAttributes}
       ref={ref}
@@ -25,7 +25,7 @@ const Input = (
 };
 
 const Component = styled.input`
-  padding: 10px 12px;
+  padding: 11px 12px;
   font-size: 14px;
   border-radius: ${Radius.MEDIUM};
   border: 1px solid transparent;
