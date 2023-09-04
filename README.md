@@ -14,6 +14,9 @@ yarn add hoons-ds
 - Button
 - Icon
 - Input
+- Pagination
+- Toggle
 - Typography
 
+### Style
 - Color
