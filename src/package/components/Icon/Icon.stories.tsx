@@ -12,13 +12,16 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     name: {
+      description: "Icon의 이름입니다.",
       control: "select",
       options: Object.keys(icons),
     },
     fill: {
+      description: "Icon의 색상(fill) 입니다.",
       control: "color",
     },
     stroke: {
+      description: "Icon의 색상(stroke) 입니다.",
       control: "color",
     },
   },

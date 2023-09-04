@@ -2,11 +2,14 @@ import styled from "@emotion/styled";
 import { ButtonHTMLAttributes, ForwardedRef, forwardRef } from "react";
 import { ButtonVariant, ButtonVariantType } from "./constants";
 import { useGetButtonProps } from "./hooks";
+import { IconName } from "../Icon/icons";
+import Icon from "../Icon";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly text: string;
   readonly variant?: ButtonVariantType;
   readonly disabled?: boolean;
+  readonly iconName?: IconName;
 }
 
 /**
@@ -20,6 +23,7 @@ const Button = (
     text,
     variant = ButtonVariant.PRIMARY,
     disabled = false,
+    iconName,
     ...buttonHtmlAttributes
   }: Props,
   ref: ForwardedRef<HTMLButtonElement>
@@ -36,11 +40,15 @@ const Button = (
       {...buttonHtmlAttributes}
     >
       {text}
+
+      {/* only icon */}
+      {iconName && <Icon size={"16px"} name={iconName} stroke={color} />}
+      {/* only icon end */}
     </Component>
   );
 };
 
-export const Component = styled.button<{ hoverColor: string }>`
+const Component = styled.button<{ hoverColor: string }>`
   padding: 10px 12px;
   font-size: 14px;
   border-radius: 8px;
@@ -59,6 +67,9 @@ export const Component = styled.button<{ hoverColor: string }>`
       background-color: ${hoverColor}!important;
     }
   `}
+
+  display: flex;
+  column-gap: 8px;
 `;
 
 export default forwardRef(Button);

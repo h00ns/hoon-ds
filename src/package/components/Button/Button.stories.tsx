@@ -1,6 +1,7 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { ButtonVariant } from "./constants";
 import Button from ".";
+import { icons } from "../Icon/icons";
 
 const meta: Meta<typeof Button> = {
   title: "Button",
@@ -26,6 +27,11 @@ const meta: Meta<typeof Button> = {
     },
     disabled: {
       description: "Button의 비활성화 여부입니다.",
+    },
+    iconName: {
+      description: "Button에 들어갈 아이콘입니다.",
+      control: "select",
+      options: ["", ...Object.keys(icons)],
     },
   },
 };
