@@ -8,6 +8,13 @@ type Props = {
   readonly stroke?: string;
 };
 
+/**
+ *  @Component - Icon
+ *  @props size - 아이콘 크기 {string}
+ *  @props name - 아이콘 이름 {IconName}
+ *  @props fill - 아이콘 색상(fill) {string}
+ *  @props stroke - 아이콘 색상(stroke) {string}
+ */
 export default function Icon({
   size = "24px",
   name,
