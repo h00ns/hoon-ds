@@ -12,7 +12,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
  *  @props variant - 인풋 스타일 {InputVariantType}
  */
 const Input = (
-  { variant = InputVariant.DEFAULT, ...htmlAttributes }: Props,
+  { variant = InputVariant.DEFAULT, ...inputHtmlAttributes }: Props,
   ref: ForwardedRef<HTMLInputElement>
 ) => {
   const [backgroundColor, borderColor] = useGetInputProps(variant);
@@ -21,7 +21,7 @@ const Input = (
     <Component
       style={{ backgroundColor, borderColor }}
       disabled={variant === InputVariant.FIXED}
-      {...htmlAttributes}
+      {...inputHtmlAttributes}
       ref={ref}
     />
   );

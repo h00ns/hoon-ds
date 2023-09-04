@@ -20,7 +20,7 @@ const Button = (
     text,
     variant = ButtonVariant.PRIMARY,
     disabled = false,
-    ...htmlButtonAttributes
+    ...buttonHtmlAttributes
   }: Props,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
@@ -33,7 +33,7 @@ const Button = (
     <Component
       style={{ backgroundColor, color, borderColor }}
       hoverColor={hoverColor}
-      {...htmlButtonAttributes}
+      {...buttonHtmlAttributes}
     >
       {text}
     </Component>
