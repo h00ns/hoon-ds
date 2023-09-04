@@ -15,7 +15,7 @@ export const useGetButtonProps = (
       case ButtonVariant.PRIMARY:
         return [primary.blue, white, "transparent", blue.blue3];
       case ButtonVariant.OUTLINE:
-        return [white, gray.gray6, gray.gray6, gray.gray1];
+        return [white, gray.gray6, gray.gray3, gray.gray1];
       case ButtonVariant.RED:
         return [red.red3, white, "transparent", red.red2];
       case ButtonVariant.GRAY:

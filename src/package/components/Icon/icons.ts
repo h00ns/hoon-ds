@@ -10,6 +10,7 @@ import { ReactComponent as Global } from "./assets/Global.svg";
 import { ReactComponent as Menu } from "./assets/Menu.svg";
 import { ReactComponent as Search } from "./assets/Search.svg";
 import { ReactComponent as Trash } from "./assets/Trash.svg";
+import { ReactComponent as Upload } from "./assets/Upload.svg";
 
 export const icons = {
   calendar: Calendar,
@@ -24,6 +25,7 @@ export const icons = {
   menu: Menu,
   search: Search,
   trash: Trash,
+  upload: Upload,
 };
 
 export type IconName = keyof typeof icons;

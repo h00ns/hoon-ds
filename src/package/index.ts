@@ -1,6 +1,7 @@
 //  components
 export { default as Badge } from "./components/Badge";
 export { default as Button } from "./components/Button";
+export { default as FileUpload } from "./components/FileUploader";
 export { default as Icon } from "./components/Icon";
 export { default as Indicator } from "./components/Indicator";
 export { default as Input } from "./components/Input";
