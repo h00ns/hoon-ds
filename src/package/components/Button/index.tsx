@@ -4,6 +4,7 @@ import { ButtonVariant, ButtonVariantType } from "./constants";
 import { useGetButtonProps } from "./hooks";
 import { IconName } from "../Icon/icons";
 import Icon from "../Icon";
+import { Radius } from "../../styles/Radius";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly text: string;
@@ -45,7 +46,7 @@ const Button = (
 const Component = styled.button<{ hoverColor: string }>`
   padding: 10px 12px;
   font-size: 14px;
-  border-radius: 8px;
+  border-radius: ${Radius.MEDIUM};
   border: 1px solid transparent;
   cursor: pointer;
 

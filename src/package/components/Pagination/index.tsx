@@ -3,6 +3,7 @@ import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import { useGetPageArray } from "./hooks";
 import { gray, primary, white } from "../../styles/Color";
 import Icon from "../Icon";
+import { Radius } from "../../styles/Radius";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly currentPage: number;
@@ -54,7 +55,7 @@ const PageItem = styled.div<{ select?: boolean }>`
   height: 32px;
   padding: 0 8px;
   color: ${primary.gray};
-  border-radius: 8px;
+  border-radius: ${Radius.MEDIUM};
   box-sizing: border-box;
 
   display: flex;

@@ -3,6 +3,8 @@ import { ForwardedRef, forwardRef, useRef, useState } from "react";
 import { gray, white } from "../../styles/Color";
 import Icon from "../Icon";
 import useHandleOutsideClick from "./useHandleOutsideClick";
+import { Shadow } from "../../styles/Shadow";
+import { Radius } from "../../styles/Radius";
 
 interface Props {
   readonly labels: LabelItem[];
@@ -62,7 +64,7 @@ const Component = styled.div`
 const SelectBox = styled.div`
   padding: 10px 12px;
   border: 1px solid ${gray.gray3};
-  border-radius: 6px;
+  border-radius: ${Radius.MEDIUM};
   font-size: 14px;
   cursor: pointer;
 
@@ -77,9 +79,9 @@ const OptionBox = styled.div`
   padding: 8px;
   background: ${white};
   border: 1px solid ${gray.gray3};
-  border-radius: 6px;
+  border-radius: ${Radius.MEDIUM};
   box-sizing: border-box;
-  box-shadow: "0px 14px 32px 0px rgba(75, 81, 91, 0.12), 0px 10px 14px 0px rgba(75, 81, 91, 0.06), 0px 0px 0px 1px rgba(75, 81, 91, 0.03), 0px 0px 1px 0px rgba(75, 81, 91, 0.20)";
+  box-shadow: ${Shadow.MEDIUM};
   z-index: 999;
 
   position: absolute;
@@ -93,7 +95,7 @@ const OptionItem = styled.button`
   padding: 10px 12px;
   border: none;
   background: ${white};
-  border-radius: 6px;
+  border-radius: ${Radius.MEDIUM};
   text-align: left;
   font-size: 14px;
   cursor: pointer;

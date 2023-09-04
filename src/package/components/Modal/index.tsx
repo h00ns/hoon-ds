@@ -4,6 +4,7 @@ import { keyframes } from "@emotion/react";
 import Typography from "../Typography";
 import { TypoVariant } from "../Typography/constants";
 import { white } from "../../styles/Color";
+import { Radius } from "../../styles/Radius";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly openModal: boolean;
@@ -71,7 +72,7 @@ const Background = styled.div<{ openModal: boolean }>`
 const Component = styled.div`
   padding: 24px;
   background: ${white};
-  border-radius: 8px;
+  border-radius: ${Radius.MEDIUM};
 `;
 
 const Title = styled.div`

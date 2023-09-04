@@ -3,6 +3,7 @@ import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import { useGetBadgeProps } from "./hooks";
 import { BadgeVariantType } from "./constants";
 import { white } from "../../styles/Color";
+import { Radius } from "../../styles/Radius";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly variant: BadgeVariantType;
@@ -24,7 +25,7 @@ const Badge = (
 
 const Component = styled.div`
   padding: 6px 8px;
-  border-radius: 6px;
+  border-radius: ${Radius.MEDIUM};
   font-size: 12px;
   color: ${white};
 `;

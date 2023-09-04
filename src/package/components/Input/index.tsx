@@ -2,6 +2,7 @@ import styled from "@emotion/styled";
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
 import { InputVariant, InputVariantType } from "./constants";
 import { useGetInputProps } from "./hooks";
+import { Radius } from "../../styles/Radius";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   readonly variant?: InputVariantType;
@@ -26,7 +27,7 @@ const Input = (
 const Component = styled.input`
   padding: 10px 12px;
   font-size: 14px;
-  border-radius: 8px;
+  border-radius: ${Radius.MEDIUM};
   border: 1px solid transparent;
 
   &:focus {
