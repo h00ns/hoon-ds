@@ -9,7 +9,7 @@ type Props = {
 };
 
 /**
- *  @Component - Icon
+ *  @Component Icon
  *  @props size - 아이콘 크기 {string}
  *  @props name - 아이콘 이름 {IconName}
  *  @props fill - 아이콘 색상(fill) {string}

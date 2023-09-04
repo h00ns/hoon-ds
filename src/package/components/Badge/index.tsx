@@ -9,11 +9,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly text: string;
 }
 
-/**
- *  @Component - Badge
- *  @props variant - 뱃지 스타일 {BadgeVariantType}
- *  @props text - 뱃지 텍스트 {string}
- */
 const Badge = (
   { variant, text, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
@@ -34,4 +29,9 @@ const Component = styled.div`
   color: ${white};
 `;
 
+/**
+ *  @Component Badge
+ *  @props variant - 뱃지 스타일 {BadgeVariantType}
+ *  @props text - 뱃지 텍스트 {string}
+ */
 export default forwardRef(Badge);

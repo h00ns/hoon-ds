@@ -24,26 +24,27 @@ var __rest = (this && this.__rest) || function (s, e) {
         }
     return t;
 };
-import { jsx as _jsx } from "react/jsx-runtime";
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import styled from "@emotion/styled";
 import { forwardRef } from "react";
 import { ButtonVariant } from "./constants";
 import { useGetButtonProps } from "./hooks";
-/**
- *  @Component - Button
- *  @props text - 버튼 텍스트 {string}
- *  @props variant - 버튼 스타일 {ButtonVariant}
- *  @props disabled - 버튼 비활성화 {boolean}
- */
+import Icon from "../Icon";
 var Button = function (_a, ref) {
-    var text = _a.text, _b = _a.variant, variant = _b === void 0 ? ButtonVariant.PRIMARY : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, buttonHtmlAttributes = __rest(_a, ["text", "variant", "disabled"]);
+    var text = _a.text, _b = _a.variant, variant = _b === void 0 ? ButtonVariant.PRIMARY : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, iconName = _a.iconName, buttonHtmlAttributes = __rest(_a, ["text", "variant", "disabled", "iconName"]);
     var _d = useGetButtonProps(variant, disabled), backgroundColor = _d[0], color = _d[1], borderColor = _d[2], hoverColor = _d[3];
-    return (_jsx(Component, __assign({ style: { backgroundColor: backgroundColor, color: color, borderColor: borderColor }, hoverColor: hoverColor }, buttonHtmlAttributes, { children: text })));
+    return (_jsxs(Component, __assign({ style: { backgroundColor: backgroundColor, color: color, borderColor: borderColor }, hoverColor: hoverColor }, buttonHtmlAttributes, { children: [text, iconName && _jsx(Icon, { size: "16px", name: iconName, stroke: color })] })));
 };
-export var Component = styled.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 10px 12px;\n  font-size: 14px;\n  border-radius: 8px;\n  border: 1px solid transparent;\n  cursor: pointer;\n\n  &:focus {\n    outline: none;\n  }\n\n  /* only hover */\n  ", "\n"], ["\n  padding: 10px 12px;\n  font-size: 14px;\n  border-radius: 8px;\n  border: 1px solid transparent;\n  cursor: pointer;\n\n  &:focus {\n    outline: none;\n  }\n\n  /* only hover */\n  ", "\n"])), function (_a) {
+var Component = styled.button(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n  padding: 10px 12px;\n  font-size: 14px;\n  border-radius: 8px;\n  border: 1px solid transparent;\n  cursor: pointer;\n\n  &:focus {\n    outline: none;\n  }\n\n  /* only hover */\n  ", "\n\n  display: flex;\n  column-gap: 8px;\n"], ["\n  padding: 10px 12px;\n  font-size: 14px;\n  border-radius: 8px;\n  border: 1px solid transparent;\n  cursor: pointer;\n\n  &:focus {\n    outline: none;\n  }\n\n  /* only hover */\n  ", "\n\n  display: flex;\n  column-gap: 8px;\n"])), function (_a) {
     var hoverColor = _a.hoverColor;
     return hoverColor &&
         "\n    &:hover {\n      background-color: ".concat(hoverColor, "!important;\n    }\n  ");
 });
+/**
+ *  @Component Button
+ *  @props text - 버튼 텍스트 {string}
+ *  @props variant - 버튼 스타일 {ButtonVariant}
+ *  @props disabled - 버튼 비활성화 {boolean}
+ */
 export default forwardRef(Button);
 var templateObject_1;

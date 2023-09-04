@@ -10,12 +10,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly children: React.ReactNode;
 }
 
-/**
- *  @Component - Typography
- *  @props variant - 텍스트 스타일 {TypoVariant}
- *  @props color - 텍스트 색상 {string}
- *  @props children - 텍스트 {React.ReactNode}
- */
 const Typography = (
   { variant, color = black, children, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
@@ -40,4 +34,10 @@ const Component = styled.div`
   letter-spacing: -2%;
 `;
 
+/**
+ *  @Component Typography
+ *  @props variant - 텍스트 스타일 {TypoVariant}
+ *  @props color - 텍스트 색상 {string}
+ *  @props children - 텍스트 {React.ReactNode}
+ */
 export default forwardRef(Typography);

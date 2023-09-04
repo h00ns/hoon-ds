@@ -12,12 +12,6 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly iconName?: IconName;
 }
 
-/**
- *  @Component - Button
- *  @props text - 버튼 텍스트 {string}
- *  @props variant - 버튼 스타일 {ButtonVariant}
- *  @props disabled - 버튼 비활성화 {boolean}
- */
 const Button = (
   {
     text,
@@ -72,4 +66,10 @@ const Component = styled.button<{ hoverColor: string }>`
   column-gap: 8px;
 `;
 
+/**
+ *  @Component Button
+ *  @props text - 버튼 텍스트 {string}
+ *  @props variant - 버튼 스타일 {ButtonVariant}
+ *  @props disabled - 버튼 비활성화 {boolean}
+ */
 export default forwardRef(Button);

@@ -8,10 +8,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly checkStatus: boolean;
 }
 
-/**
- *  @Component - Toggle
- *  @props checkStatus - 토글 상태 {boolean}
- */
 const Toggle = (
   { checkStatus, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
@@ -43,4 +39,8 @@ const Circle = styled.div`
   border-radius: 100%;
 `;
 
+/**
+ *  @Component Toggle
+ *  @props checkStatus - 토글 상태 {boolean}
+ */
 export default forwardRef(Toggle);

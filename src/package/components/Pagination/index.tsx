@@ -10,12 +10,6 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly handlePagination: (page: number) => void;
 }
 
-/**
- *  @Component - Pagination
- *  @props currentPage - 현재 페이지 {number}
- *  @props totalPage - 전체 페이지 {number}
- *  @props handlePagination - 페이지 변경 핸들러 {(page: number) => void)}
- */
 const Pagination = (
   { currentPage, totalPage, handlePagination, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
@@ -83,4 +77,10 @@ const PageItem = styled.div<{ select?: boolean }>`
 
 const IconWrapper = styled(PageItem)``;
 
+/**
+ *  @Component Pagination
+ *  @props currentPage - 현재 페이지 {number}
+ *  @props totalPage - 전체 페이지 {number}
+ *  @props handlePagination - 페이지 변경 핸들러 {(page: number) => void)}
+ */
 export default forwardRef(Pagination);

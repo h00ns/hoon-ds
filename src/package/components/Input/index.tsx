@@ -7,10 +7,6 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   readonly variant?: InputVariantType;
 }
 
-/**
- *  @Component - Input
- *  @props variant - 인풋 스타일 {InputVariantType}
- */
 const Input = (
   { variant = InputVariant.DEFAULT, ...inputHtmlAttributes }: Props,
   ref: ForwardedRef<HTMLInputElement>
@@ -38,4 +34,8 @@ const Component = styled.input`
   }
 `;
 
+/**
+ *  @Component Input
+ *  @props variant - 인풋 스타일 {InputVariantType}
+ */
 export default forwardRef(Input);
