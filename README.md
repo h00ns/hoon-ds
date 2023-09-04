@@ -12,11 +12,17 @@ yarn add hoons-ds
 ### Component
 - Badge
 - Button
+- Dropdown
+- FileUploader
 - Icon
+- Indicator
 - Input
+- Modal
 - Pagination
 - Toggle
 - Typography
 
 ### Style
 - Color
+- Radius
+- Shadow
