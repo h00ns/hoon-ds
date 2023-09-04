@@ -9,7 +9,7 @@ npm install hoons-ds
 yarn add hoons-ds
 ```
 
-###Component
+### Component
 - Badge
 - Button
 - Icon
