@@ -11,6 +11,7 @@ export { default as Input } from "./components/Input";
 export { default as Modal } from "./components/Modal";
 export { default as Pagination } from "./components/Pagination";
 export { default as Skeleton } from "./components/Skeleton";
+export { default as Textarea } from "./components/Textarea";
 export { default as Toggle } from "./components/Toggle";
 export { default as Typography } from "./components/Typography";
 
@@ -19,6 +20,7 @@ export { AlertVariant } from "./components/Alert/constants";
 export { BadgeVariant } from "./components/Badge/constants";
 export { ButtonVariant } from "./components/Button/constants";
 export { InputVariant } from "./components/Input/constants";
+export { TextareaVariant } from "./components/Textarea/constants";
 export { TypoVariant } from "./components/Typography/constants";
 
 //  styles
