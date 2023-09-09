@@ -1,4 +1,6 @@
+import { AlertVariant } from "./components/Alert/constants";
 //  components
+export { default as Alert } from "./components/Alert";
 export { default as Badge } from "./components/Badge";
 export { default as Button } from "./components/Button";
 export { default as Dropdown } from "./components/Dropdown";
@@ -13,6 +15,7 @@ export { default as Toggle } from "./components/Toggle";
 export { default as Typography } from "./components/Typography";
 
 //  constants
+export { AlertVariant } from "./components/Alert/constants";
 export { BadgeVariant } from "./components/Badge/constants";
 export { ButtonVariant } from "./components/Button/constants";
 export { InputVariant } from "./components/Input/constants";
