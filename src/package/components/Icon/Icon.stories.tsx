@@ -4,7 +4,7 @@ import { icons } from "./icons";
 import { primary } from "../../styles/Color";
 
 const meta = {
-  title: "Icon",
+  title: "Components/Icon",
   component: Icon,
   parameters: {
     layout: "centered",

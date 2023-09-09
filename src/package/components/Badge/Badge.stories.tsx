@@ -3,7 +3,7 @@ import { BadgeVariant } from "./constants";
 import Badge from ".";
 
 const meta: Meta<typeof Badge> = {
-  title: "Badge",
+  title: "Components/Badge",
   component: Badge,
   parameters: {
     layout: "centered",

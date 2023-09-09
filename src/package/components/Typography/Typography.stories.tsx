@@ -4,7 +4,7 @@ import Typography from ".";
 import { black } from "../../styles/Color";
 
 const meta: Meta<typeof Typography> = {
-  title: "Typography",
+  title: "Components/Typography",
   component: Typography,
   parameters: {
     layout: "centered",

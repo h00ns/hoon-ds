@@ -20,5 +20,5 @@ export { TypoVariant } from "./components/Typography/constants";
 
 //  styles
 export { primary, blue, gray, red, green, white, black } from "./styles/Color";
-export { Shadow } from "./styles/Shadow";
 export { Radius } from "./styles/Radius";
+export { Shadow } from "./styles/Shadow";

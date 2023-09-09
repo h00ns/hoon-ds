@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import Indicator from ".";
 
 const meta: Meta<typeof Indicator> = {
-  title: "Indicator",
+  title: "Components/Indicator",
   component: Indicator,
   parameters: {
     layout: "centered",

@@ -4,7 +4,7 @@ import Button from ".";
 import { icons } from "../Icon/icons";
 
 const meta: Meta<typeof Button> = {
-  title: "Button",
+  title: "Components/Button",
   component: Button,
   parameters: {
     layout: "centered",

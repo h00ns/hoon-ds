@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import FileUploader from ".";
 
 const meta: Meta<typeof FileUploader> = {
-  title: "FileUploader",
+  title: "Components/FileUploader",
   component: FileUploader,
   parameters: {
     layout: "centered",
