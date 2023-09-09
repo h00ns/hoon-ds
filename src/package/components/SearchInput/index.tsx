@@ -8,11 +8,11 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {}
 
 const SearchInput = (
   { style, onClick, ...inputHtmlAttributes }: Props,
-  ref: ForwardedRef<HTMLDivElement>
+  ref: ForwardedRef<HTMLInputElement>
 ) => {
   return (
-    <Component ref={ref} style={style} onClick={onClick}>
-      <Input {...inputHtmlAttributes} />
+    <Component style={style} onClick={onClick}>
+      <Input ref={ref} {...inputHtmlAttributes} />
 
       <IconWrapper>
         <Icon name="search" size={"16px"} />

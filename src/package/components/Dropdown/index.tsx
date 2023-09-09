@@ -1,26 +1,39 @@
 import styled from "@emotion/styled";
-import { ForwardedRef, forwardRef, useRef, useState } from "react";
+import {
+  ForwardedRef,
+  HTMLAttributes,
+  forwardRef,
+  useRef,
+  useState,
+} from "react";
 import { gray, white } from "../../styles/Color";
 import Icon from "../Icon";
 import useHandleOutsideClick from "./useHandleOutsideClick";
 import { Shadow } from "../../styles/Shadow";
 import { Radius } from "../../styles/Radius";
 
-interface Props {
+interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly labels: LabelItem[];
   readonly placeholder?: string;
   readonly name?: string;
   readonly value: string;
-  readonly onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  readonly handleLabelClick: (value: string, name?: string) => void;
 }
 
-export type LabelItem = {
+type LabelItem = {
   label: string;
   value: string;
 };
 
 const Dropdown = (
-  { labels, placeholder, name, value, onClick }: Props,
+  {
+    labels,
+    placeholder,
+    name,
+    value,
+    handleLabelClick,
+    ...HTMLAttributes
+  }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   const selectRef = useRef<HTMLDivElement>(null);
@@ -33,7 +46,7 @@ const Dropdown = (
 
   const selectLabel = labels.find((item) => item.value === value)?.label;
   return (
-    <Component>
+    <Component {...HTMLAttributes}>
       <SelectBox onClick={() => setIsOpen((prev) => !prev)} ref={selectRef}>
         {selectLabel || placeholder}
         <Icon size="16px" name={isOpen ? "chevron-up" : "chevron-down"} />
@@ -43,9 +56,7 @@ const Dropdown = (
         <OptionBox>
           {labels.map((item) => (
             <OptionItem
-              name={name}
-              value={item.value}
-              onClick={onClick}
+              onClick={() => handleLabelClick(item.value, name)}
               key={item.label}
             >
               {item.label}
@@ -91,12 +102,10 @@ const OptionBox = styled.div`
   row-gap: 4px;
 `;
 
-const OptionItem = styled.button`
+const OptionItem = styled.div`
   padding: 10px 12px;
-  border: none;
   background: ${white};
   border-radius: ${Radius.MEDIUM};
-  text-align: left;
   font-size: 14px;
   cursor: pointer;
 
@@ -111,6 +120,6 @@ const OptionItem = styled.button`
  *  @props placeholder - placeholder
  *  @props name - name
  *  @props value - value
- *  @props onClick - 클릭 이벤트 { (e: React.MouseEvent<HTMLButtonElement>) => void }
+ *  @props onClick - 클릭 이벤트 { (value: string, name?: string) => void }
  */
 export default forwardRef(Dropdown);
