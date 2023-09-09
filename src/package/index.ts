@@ -10,6 +10,7 @@ export { default as Indicator } from "./components/Indicator";
 export { default as Input } from "./components/Input";
 export { default as Modal } from "./components/Modal";
 export { default as Pagination } from "./components/Pagination";
+export { default as SearchInput } from "./components/SearchInput";
 export { default as Skeleton } from "./components/Skeleton";
 export { default as Textarea } from "./components/Textarea";
 export { default as Toggle } from "./components/Toggle";
