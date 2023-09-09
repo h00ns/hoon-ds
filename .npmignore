@@ -2,3 +2,5 @@ node_modules/
 src/
 public/
 tsconfig.json
+.storybook/
+rollup.config.js

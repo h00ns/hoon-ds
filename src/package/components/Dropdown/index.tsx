@@ -74,11 +74,6 @@ const SelectBox = styled.div`
   align-items: center;
 `;
 
-const IconWrapper = styled.div`
-  width: 16px;
-  height: 16px;
-`;
-
 const OptionBox = styled.div`
   width: 100%;
   padding: 8px;

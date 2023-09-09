@@ -8,6 +8,20 @@ const meta: Meta<typeof Modal> = {
   parameters: {
     layout: "centered",
   },
+  argTypes: {
+    openModal: {
+      description: "모달의 열림 여부입니다.",
+    },
+    title: {
+      description: "상단에 표시될 모달의 제목입니다.",
+    },
+    contents: {
+      description: "모달의 내용입니다.",
+    },
+    footer: {
+      description: "모달의 하단에 표시될 내용입니다.",
+    },
+  },
   // tags: ["autodocs"],
 };
 

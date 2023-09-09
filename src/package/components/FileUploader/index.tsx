@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 import {
   ForwardedRef,
-  HTMLAttributes,
+  InputHTMLAttributes,
   forwardRef,
   useRef,
   useState,
@@ -13,14 +13,14 @@ import Button from "../Button";
 import { ButtonVariant } from "../Button/constants";
 import useDragAndDrop from "./useDragAndDrop";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props extends InputHTMLAttributes<HTMLDivElement> {
   readonly description?: string;
   readonly accept?: string;
   readonly handleFile: (file: File) => void;
 }
 
 const FileUploader = (
-  { description, accept, handleFile, ...htmlAttributes }: Props,
+  { description, accept, handleFile, style, ...InputHTMLAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
   const componentRef = useRef<HTMLDivElement>(null);
@@ -44,6 +44,13 @@ const FileUploader = (
     setIsDragging(false);
   };
 
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { files } = e.target;
+    if (files && files.length > 0) {
+      handleFile(files[0]);
+    }
+  };
+
   useDragAndDrop(componentRef, handleFile);
   return (
     <Component
@@ -52,7 +59,7 @@ const FileUploader = (
       isDragging={isDragging}
       onDragEnter={handleDragOver}
       onDragLeave={handleDragLeave}
-      {...htmlAttributes}
+      style={style}
     >
       <IconWrapper>
         <Icon
@@ -71,6 +78,8 @@ const FileUploader = (
         ref={inputRef}
         type="file"
         accept={accept}
+        onChange={handleFileChange}
+        {...InputHTMLAttributes}
       />
 
       <ButtonWrapper>

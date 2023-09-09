@@ -16,7 +16,8 @@
     "noEmit": false,
     "jsx": "react-jsx",
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "declarationDir": "./dist/types"
   },
   "include": ["./src/package/**/*.tsx", "./src/package/**/*.ts"]
 }

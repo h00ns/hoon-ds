@@ -1,32 +1,60 @@
 {
-  "name": "hoons-ds",
-  "version": "0.0.1",
+  "name": "hoon-ds",
+  "version": "1.0.0",
   "description": "Hoon Design System",
-  "private": false,
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "browser": "./browser/specific/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/h00ns/Design-System.git"
   },
   "homepage": "hoons.site",
+  "author": {
+    "name": "Hoon",
+    "email": "01052405583a@gmail.com"
+  },
+  "private": false,
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
-    "@types/node": "^16.18.47",
-    "@types/react": "^18.2.21",
+    "@emotion/styled": "^11.11.0"
+  },
+  "peerDependencies": {
     "react": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-image": "^3.0.2",
+    "@rollup/plugin-node-resolve": "^15.0.1",
+    "@rollup/plugin-typescript": "^11.0.0",
+    "@storybook/addon-essentials": "^7.4.0",
+    "@storybook/addon-interactions": "^7.4.0",
+    "@storybook/addon-links": "^7.4.0",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.4.0",
+    "@storybook/preset-create-react-app": "^7.4.0",
+    "@storybook/react": "^7.4.0",
+    "@storybook/react-webpack5": "^7.4.0",
+    "@storybook/testing-library": "^0.2.0",
+    "@svgr/rollup": "^8.1.0",
+    "@types/react": "^18.2.21",
+    "@types/rollup-plugin-peer-deps-external": "^2.2.1",
+    "babel-plugin-named-exports-order": "^0.0.2",
+    "eslint-plugin-storybook": "^0.6.13",
+    "prop-types": "^15.8.1",
+    "rollup": "^3.20.2",
+    "rollup-plugin-dts": "^5.3.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.2",
+    "storybook": "^7.4.0",
     "typescript": "^4.9.5"
   },
   "scripts": {
-    "tsc": "tsc",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "prepare": "rm -rf dist && mkdir dist && tsc",
+    "rollup": "rm -rf dist && rollup -c --bundleConfigAsCjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
@@ -48,22 +76,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@storybook/addon-essentials": "^7.4.0",
-    "@storybook/addon-interactions": "^7.4.0",
-    "@storybook/addon-links": "^7.4.0",
-    "@storybook/addon-onboarding": "^1.0.8",
-    "@storybook/blocks": "^7.4.0",
-    "@storybook/preset-create-react-app": "^7.4.0",
-    "@storybook/react": "^7.4.0",
-    "@storybook/react-webpack5": "^7.4.0",
-    "@storybook/testing-library": "^0.2.0",
-    "babel-plugin-named-exports-order": "^0.0.2",
-    "eslint-plugin-storybook": "^0.6.13",
-    "prop-types": "^15.8.1",
-    "react-dom": "^18.2.0",
-    "storybook": "^7.4.0",
-    "webpack": "^5.88.2"
   }
 }

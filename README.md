@@ -1,13 +1,19 @@
-# hoons-ds 
+# hoon-ds 
+23.09.02 ~ develop...
 
 ### document
-https://hoons.site
+[Storybook](https://hoons.site) <br />
+[NPM](https://www.npmjs.com/package/hoon-ds)
 
 ### Install
 ```bash
-npm install hoons-ds
-yarn add hoons-ds
+$ npm install hoon-ds
+$ yarn add hoon-ds
 ```
+
+### Dependencies
+- @emiotn/styled, @emotion/react
+- rollup, storybook (Dev)
 
 ### Component
 - Badge
@@ -19,6 +25,7 @@ yarn add hoons-ds
 - Input
 - Modal
 - Pagination
+- Skeleton
 - Toggle
 - Typography
 

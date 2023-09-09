@@ -1,7 +1,8 @@
 /**
- *  Headings
- *  Sub Heading
- *  Body
+ *  @Constants TypoVariant
+ *  @value h - Headings
+ *  @value sh - Sub Heading
+ *  @value b - Body
  */
 export const TypoVariant = {
   H1: "h1",
