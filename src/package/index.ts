@@ -1,8 +1,8 @@
-import { AlertVariant } from "./components/Alert/constants";
 //  components
 export { default as Alert } from "./components/Alert";
 export { default as Badge } from "./components/Badge";
 export { default as Button } from "./components/Button";
+export { default as Card } from "./components/Card";
 export { default as Dropdown } from "./components/Dropdown";
 export { default as FileUpload } from "./components/FileUploader";
 export { default as Icon } from "./components/Icon";
