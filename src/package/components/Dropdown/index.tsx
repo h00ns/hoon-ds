@@ -120,6 +120,6 @@ const OptionItem = styled.div`
  *  @props placeholder - placeholder
  *  @props name - name
  *  @props value - value
- *  @props onClick - 클릭 이벤트 { (value: string, name?: string) => void }
+ *  @props handleLabelClick - 클릭 이벤트 { (value: string, name?: string) => void }
  */
 export default forwardRef(Dropdown);

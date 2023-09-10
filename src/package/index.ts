@@ -12,6 +12,8 @@ export { default as Modal } from "./components/Modal";
 export { default as Pagination } from "./components/Pagination";
 export { default as SearchInput } from "./components/SearchInput";
 export { default as Skeleton } from "./components/Skeleton";
+export { default as Tabbar } from "./components/Tabbar";
+export { default as Table } from "./components/Table";
 export { default as Textarea } from "./components/Textarea";
 export { default as Toggle } from "./components/Toggle";
 export { default as Typography } from "./components/Typography";
