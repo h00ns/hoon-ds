@@ -24,7 +24,7 @@ const meta: Meta<typeof Dropdown> = {
         "드롭다운의 placeholder 속성입니다. 일치하는 value가 없으면 표시됩니다.",
     },
     onClick: {
-      description: "(e: React.MouseEvent<HTMLButtonElement>) => void",
+      description: "(value: string, name?: string) => void",
     },
   },
 };
@@ -42,6 +42,7 @@ export const Default: Story = {
     name: "name",
     value: "option1",
     placeholder: "placeholder",
-    onClick: () => {},
+    handleLabelClick: (value: string, name?: string) =>
+      alert(`value: ${value}, name: ${name}`),
   },
 };
