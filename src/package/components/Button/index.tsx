@@ -30,6 +30,7 @@ const Button = (
 
   return (
     <Component
+      ref={ref}
       style={{ backgroundColor, color, borderColor }}
       hoverColor={hoverColor}
       {...buttonHtmlAttributes}
