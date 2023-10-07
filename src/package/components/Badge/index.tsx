@@ -1,9 +1,6 @@
-import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
-import { useGetBadgeProps } from "./hooks";
-import { BadgeVariantType } from "./constants";
-import { white } from "../../styles/Color";
-import { Radius } from "../../styles/Radius";
+import { BadgeVariantType } from "./types";
+import { badge } from "./index.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly variant: BadgeVariantType;
@@ -14,21 +11,12 @@ const Badge = (
   { variant, text, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
-  const [backgroundColor] = useGetBadgeProps(variant);
-
   return (
-    <Component style={{ backgroundColor }} ref={ref} {...htmlAttributes}>
+    <div className={badge({ variant })} ref={ref} {...htmlAttributes}>
       {text}
-    </Component>
+    </div>
   );
 };
-
-const Component = styled.div`
-  padding: 6px 8px;
-  border-radius: ${Radius.MEDIUM};
-  font-size: 12px;
-  color: ${white};
-`;
 
 /**
  *  @Component Badge

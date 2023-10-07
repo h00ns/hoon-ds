@@ -1,6 +1,6 @@
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import Icon from "../Icon";
-import { AlertVariant, AlertVariantType } from "./constants";
+import { AlertVariant, AlertVariantType } from "./types";
 import { alert } from "./index.css";
 import { primary, red } from "../../styles/Color";
 

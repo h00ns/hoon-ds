@@ -1,4 +1,4 @@
-import { AlertVariant } from "./constants";
+import { AlertVariant } from "./types";
 import { Radius } from "../../styles/Radius";
 import { recipe } from "@vanilla-extract/recipes";
 import { blue, red } from "../../styles/Color";

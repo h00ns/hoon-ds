@@ -18,9 +18,9 @@ export { default as Textarea } from "./components/Textarea";
 export { default as Toggle } from "./components/Toggle";
 export { default as Typography } from "./components/Typography";
 
-//  constants
-export { AlertVariant } from "./components/Alert/constants";
-export { BadgeVariant } from "./components/Badge/constants";
+//  types
+export { AlertVariant } from "./components/Alert/types";
+export { BadgeVariant } from "./components/Badge/types";
 export { ButtonVariant } from "./components/Button/constants";
 export { InputVariant } from "./components/Input/constants";
 export { TextareaVariant } from "./components/Textarea/constants";

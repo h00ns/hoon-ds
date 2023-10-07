@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import Alert from ".";
-import { AlertVariant } from "./constants";
+import { AlertVariant } from "./types";
 
 const meta: Meta<typeof Alert> = {
   title: "Components/Alert",
