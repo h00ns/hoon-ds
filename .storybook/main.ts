@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import { VanillaExtractPlugin } from "@vanilla-extract/webpack-plugin";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -17,5 +18,10 @@ const config: StorybookConfig = {
     autodocs: "tag",
   },
   staticDirs: ["../public"],
+  webpackFinal(config, options) {
+    config.plugins?.push(new VanillaExtractPlugin());
+
+    return config;
+  },
 };
 export default config;

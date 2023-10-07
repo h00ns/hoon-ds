@@ -25,6 +25,11 @@
     "component",
     "component library"
   ],
+  "scripts": {
+    "rollup": "rm -rf dist && rollup -c --bundleConfigAsCjs",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0"
@@ -50,6 +55,9 @@
     "@svgr/rollup": "^8.1.0",
     "@types/react": "^18.2.21",
     "@types/rollup-plugin-peer-deps-external": "^2.2.1",
+    "@vanilla-extract/css": "^1.13.0",
+    "@vanilla-extract/recipes": "^0.5.0",
+    "@vanilla-extract/webpack-plugin": "^2.3.1",
     "babel-plugin-named-exports-order": "^0.0.2",
     "eslint-plugin-storybook": "^0.6.13",
     "prop-types": "^15.8.1",
@@ -59,29 +67,5 @@
     "rollup-plugin-postcss": "^4.0.2",
     "storybook": "^7.4.0",
     "typescript": "^4.9.5"
-  },
-  "scripts": {
-    "rollup": "rm -rf dist && rollup -c --bundleConfigAsCjs",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   }
 }
