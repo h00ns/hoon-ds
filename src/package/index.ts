@@ -21,7 +21,7 @@ export { default as Typography } from "./components/Typography";
 //  types
 export { AlertVariant } from "./components/Alert/types";
 export { BadgeVariant } from "./components/Badge/types";
-export { ButtonVariant } from "./components/Button/constants";
+export { ButtonVariant } from "./components/Button/types";
 export { InputVariant } from "./components/Input/constants";
 export { TextareaVariant } from "./components/Textarea/constants";
 export { TypoVariant } from "./components/Typography/constants";

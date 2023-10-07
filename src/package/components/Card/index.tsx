@@ -1,8 +1,5 @@
-import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
-import { white } from "../../styles/Color";
-import { Radius } from "../../styles/Radius";
-import { Shadow } from "../../styles/Shadow";
+import { card } from "./index.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly children: React.ReactNode;
@@ -12,17 +9,12 @@ const Card = (
   { children, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
-  return <Component {...htmlAttributes}>{children}</Component>;
+  return (
+    <div className={card} ref={ref} {...htmlAttributes}>
+      {children}
+    </div>
+  );
 };
-
-const Component = styled.div`
-  width: 100%;
-  height: 100%;
-  padding: 24px;
-  background: ${white};
-  border-radius: ${Radius.MEDIUM};
-  box-shadow: ${Shadow.MEDIUM};
-`;
 
 /**
  *  @Component Card

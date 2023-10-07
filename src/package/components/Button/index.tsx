@@ -1,15 +1,15 @@
-import styled from "@emotion/styled";
 import { ButtonHTMLAttributes, ForwardedRef, forwardRef } from "react";
-import { ButtonVariant, ButtonVariantType } from "./constants";
-import { useGetButtonProps } from "./hooks";
+import { ButtonVariant, ButtonVariantType } from "./types";
 import { IconName } from "../Icon/icons";
 import Icon from "../Icon";
-import { Radius } from "../../styles/Radius";
+import { button } from "./index.css";
+import { gray, red, white } from "../../styles/Color";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly text: string;
   readonly variant?: ButtonVariantType;
   readonly disabled?: boolean;
+  readonly fullWidth?: boolean;
   readonly iconName?: IconName;
 }
 
@@ -18,55 +18,36 @@ const Button = (
     text,
     variant = ButtonVariant.PRIMARY,
     disabled = false,
+    fullWidth = false,
     iconName,
     ...buttonHtmlAttributes
   }: Props,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
-  const [backgroundColor, color, borderColor, hoverColor] = useGetButtonProps(
-    variant,
-    disabled
-  );
+  const iconColor = disabled
+    ? gray.gray5
+    : {
+        [ButtonVariant.PRIMARY]: white,
+        [ButtonVariant.OUTLINE]: gray.gray6,
+        [ButtonVariant.RED]: red.red3,
+        [ButtonVariant.GRAY]: white,
+        [ButtonVariant.GREEN]: white,
+      }[variant];
 
   return (
-    <Component
+    <button
+      className={button({ variant, disabled, fullWidth })}
       ref={ref}
-      style={{ backgroundColor, color, borderColor }}
-      hoverColor={hoverColor}
       {...buttonHtmlAttributes}
     >
       {text}
 
       {/* only icon */}
-      {iconName && <Icon size={"16px"} name={iconName} stroke={color} />}
+      {iconName && <Icon size={"20px"} name={iconName} stroke={iconColor} />}
       {/* only icon end */}
-    </Component>
+    </button>
   );
 };
-
-const Component = styled.button<{ hoverColor: string }>`
-  padding: 11px 12px;
-  font-size: 14px;
-  border-radius: ${Radius.MEDIUM};
-  border: 1px solid transparent;
-  cursor: pointer;
-
-  &:focus {
-    outline: none;
-  }
-
-  /* only hover */
-  ${({ hoverColor }) =>
-    hoverColor &&
-    `
-    &:hover {
-      background-color: ${hoverColor}!important;
-    }
-  `}
-
-  display: flex;
-  column-gap: 8px;
-`;
 
 /**
  *  @Component Button
