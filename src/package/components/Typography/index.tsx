@@ -1,8 +1,7 @@
-import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
-import { TypoVariantType } from "./constants";
-import { useGetTypographyProps } from "./hooks";
+import { TypoVariantType } from "./types";
 import { black } from "../../styles/Color";
+import { typography } from "./index.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly variant: TypoVariantType;
@@ -14,25 +13,12 @@ const Typography = (
   { variant, color = black, children, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
-  const [fontSize, fontWeight, lineHeight] = useGetTypographyProps(variant);
-
   return (
-    <Component
-      style={{ color, fontSize, fontWeight, lineHeight }}
-      ref={ref}
-      {...htmlAttributes}
-    >
+    <div className={typography({ variant })} ref={ref} {...htmlAttributes}>
       {children}
-    </Component>
+    </div>
   );
 };
-
-const Component = styled.div`
-  font-family: "Pretendard";
-  word-break: keep-all;
-  white-space: pre-line;
-  letter-spacing: -2%;
-`;
 
 /**
  *  @Component Typography

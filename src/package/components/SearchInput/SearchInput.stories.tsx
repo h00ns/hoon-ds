@@ -4,9 +4,9 @@ import SearchInput from ".";
 const meta: Meta<typeof SearchInput> = {
   title: "Components/SearchInput",
   component: SearchInput,
-  parameters: {
-    layout: "centered",
-  },
+  // parameters: {
+  //   layout: "centered",
+  // },
   tags: ["autodocs"],
 };
 

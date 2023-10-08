@@ -1,4 +1,3 @@
-import styled from "@emotion/styled";
 import {
   ForwardedRef,
   HTMLAttributes,
@@ -6,11 +5,9 @@ import {
   useRef,
   useState,
 } from "react";
-import { gray, white } from "../../styles/Color";
 import Icon from "../Icon";
 import useHandleOutsideClick from "./useHandleOutsideClick";
-import { Shadow } from "../../styles/Shadow";
-import { Radius } from "../../styles/Radius";
+import { dropdown, optionBox, optionItem, selectBox } from "./index.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly labels: LabelItem[];
@@ -36,83 +33,43 @@ const Dropdown = (
   }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
-  const selectRef = useRef<HTMLDivElement>(null);
+  const selectBoxRef = useRef<HTMLDivElement>(null);
 
   const [isOpen, setIsOpen] = useState(false);
 
-  useHandleOutsideClick([selectRef], () => {
+  useHandleOutsideClick([selectBoxRef], () => {
     setIsOpen(false);
   });
 
   const selectLabel = labels.find((item) => item.value === value)?.label;
   return (
-    <Component {...HTMLAttributes}>
-      <SelectBox onClick={() => setIsOpen((prev) => !prev)} ref={selectRef}>
+    <div className={dropdown} ref={ref} {...HTMLAttributes}>
+      <div
+        className={selectBox}
+        ref={selectBoxRef}
+        onClick={() => setIsOpen((prev) => !prev)}
+      >
         {selectLabel || placeholder}
         <Icon size="16px" name={isOpen ? "chevron-up" : "chevron-down"} />
-      </SelectBox>
+      </div>
 
+      {/* Option */}
       {isOpen && (
-        <OptionBox>
+        <div className={optionBox}>
           {labels.map((item) => (
-            <OptionItem
+            <div
+              className={optionItem}
               onClick={() => handleLabelClick(item.value, name)}
               key={item.label}
             >
               {item.label}
-            </OptionItem>
+            </div>
           ))}
-        </OptionBox>
+        </div>
       )}
-    </Component>
+    </div>
   );
 };
-
-const Component = styled.div`
-  position: relative;
-`;
-
-const SelectBox = styled.div`
-  padding: 11px 12px;
-  border: 1px solid ${gray.gray3};
-  border-radius: ${Radius.MEDIUM};
-  font-size: 14px;
-  cursor: pointer;
-
-  display: flex;
-  column-gap: 12px;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const OptionBox = styled.div`
-  width: 100%;
-  padding: 8px;
-  background: ${white};
-  border: 1px solid ${gray.gray3};
-  border-radius: ${Radius.MEDIUM};
-  box-sizing: border-box;
-  box-shadow: ${Shadow.MEDIUM};
-  z-index: 999;
-
-  position: absolute;
-  top: 48px;
-
-  display: grid;
-  row-gap: 4px;
-`;
-
-const OptionItem = styled.div`
-  padding: 10px 12px;
-  background: ${white};
-  border-radius: ${Radius.MEDIUM};
-  font-size: 14px;
-  cursor: pointer;
-
-  &:hover {
-    background: ${gray.gray1};
-  }
-`;
 
 /**
  *  @Component Dropdown

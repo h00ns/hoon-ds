@@ -1,19 +1,20 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { InputVariant } from "./constants";
+import { TextFieldVariant } from "./types";
 import Input from ".";
 
 const meta: Meta<typeof Input> = {
-  title: "Components/Input",
+  title: "Components/TextField",
   component: Input,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
   argTypes: {
     variant: {
       description: "Input의 스타일입니다.",
       control: "radio",
-      options: [InputVariant.DEFAULT, InputVariant.ERROR, InputVariant.FIXED],
+      options: [
+        TextFieldVariant.DEFAULT,
+        TextFieldVariant.ERROR,
+        TextFieldVariant.FIXED,
+      ],
     },
   },
 };
@@ -26,18 +27,18 @@ const commonArgs = {};
 export const Default: Story = {
   args: {
     ...commonArgs,
-    variant: InputVariant.DEFAULT,
+    variant: TextFieldVariant.DEFAULT,
   },
 };
 export const Error: Story = {
   args: {
     ...commonArgs,
-    variant: InputVariant.ERROR,
+    variant: TextFieldVariant.ERROR,
   },
 };
 export const Fixed: Story = {
   args: {
     ...commonArgs,
-    variant: InputVariant.FIXED,
+    variant: TextFieldVariant.FIXED,
   },
 };

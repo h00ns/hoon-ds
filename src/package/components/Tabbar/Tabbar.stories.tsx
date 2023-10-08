@@ -4,9 +4,6 @@ import Tabbar from ".";
 const meta: Meta<typeof Tabbar> = {
   title: "Components/Tabbar",
   component: Tabbar,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
   argTypes: {
     labels: {

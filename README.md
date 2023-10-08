@@ -14,9 +14,9 @@ $ npm install hoon-ds
 $ yarn add hoon-ds
 ```
 
-### Dependencies
+### stack
 
-- @emiotn/styled, @emotion/react
+- Vanilla Extract (zero runtime css in js)
 - rollup, storybook (Dev)
 
 ### Component

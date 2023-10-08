@@ -8,9 +8,18 @@ const meta: Meta<typeof Indicator> = {
     layout: "centered",
   },
   tags: ["autodocs"],
+  argTypes: {
+    size: {
+      description: "Indicator의 크기입니다.",
+    },
+  },
 };
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Default: Story = {};
+export const Default: Story = {
+  args: {
+    size: "16px",
+  },
+};

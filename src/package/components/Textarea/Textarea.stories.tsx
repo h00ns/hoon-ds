@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { TextareaVariant } from "./constants";
+import { TextareaVariant } from "./types";
 import Textarea from ".";
 
 const meta: Meta<typeof Textarea> = {

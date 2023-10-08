@@ -1,6 +1,5 @@
-import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
-import { gray, primary } from "../../styles/Color";
+import { tabbar, tabbarItem } from "./index.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly labels: LabelItem[];
@@ -19,37 +18,18 @@ const Tabbar = (
 ) => {
   const selectLabel = labels.find((item) => item.value === value)?.label;
   return (
-    <Component ref={ref} {...htmlAttributes}>
+    <div className={tabbar} ref={ref} {...htmlAttributes}>
       {labels.map((item) => (
-        <TabbarItem
-          isSelect={item.label === selectLabel}
+        <div
+          className={tabbarItem({ isSelect: item.label === selectLabel })}
           onClick={() => handleTabClick(item.value)}
         >
           {item.label}
-        </TabbarItem>
+        </div>
       ))}
-    </Component>
+    </div>
   );
 };
-
-const Component = styled.div`
-  border-bottom: 1px solid ${gray.gray3};
-
-  display: flex;
-  justify-content: center;
-`;
-
-const TabbarItem = styled.div<{ isSelect: boolean }>`
-  padding: 12px 16px;
-  cursor: pointer;
-
-  ${({ isSelect }) =>
-    isSelect &&
-    `
-    padding: 12px 16px 8px;
-    border-bottom: 4px solid ${primary.blue}
-  `}
-`;
 
 /**
  *  @Component Tabbar

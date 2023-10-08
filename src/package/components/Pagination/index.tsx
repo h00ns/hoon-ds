@@ -1,9 +1,7 @@
-import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import { useGetPageArray } from "./hooks";
-import { gray, primary, white } from "../../styles/Color";
 import Icon from "../Icon";
-import { Radius } from "../../styles/Radius";
+import { pageItem, pagination } from "./index.css";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly currentPage: number;
@@ -21,62 +19,27 @@ const Pagination = (
   const pageArray = useGetPageArray(currentPage, totalPage);
 
   return (
-    <Component {...htmlAttributes} ref={ref}>
-      <IconWrapper onClick={() => handlePagination(prevPage)}>
+    <div className={pagination} ref={ref} {...htmlAttributes}>
+      <div className={pageItem()} onClick={() => handlePagination(prevPage)}>
         <Icon size={"16px"} name="chevron-left" />
-      </IconWrapper>
+      </div>
 
       {pageArray.map((page) => (
-        <PageItem
-          select={page === currentPage}
+        <div
+          className={pageItem({ isSelect: page === currentPage })}
           key={page}
           onClick={() => handlePagination(page)}
         >
           {page}
-        </PageItem>
+        </div>
       ))}
 
-      <IconWrapper onClick={() => handlePagination(nextPage)}>
+      <div className={pageItem()} onClick={() => handlePagination(nextPage)}>
         <Icon size={"16px"} name="chevron-right" />
-      </IconWrapper>
-    </Component>
+      </div>
+    </div>
   );
 };
-
-const Component = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 4px;
-`;
-
-const PageItem = styled.div<{ select?: boolean }>`
-  min-width: 32px;
-  height: 32px;
-  padding: 0 8px;
-  color: ${primary.gray};
-  border-radius: ${Radius.MEDIUM};
-  box-sizing: border-box;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-
-  ${({ select }) =>
-    select
-      ? `
-    color:${white};
-    background:${primary.blue};
-    `
-      : `
-    &:hover {
-      background: ${gray.gray1};
-    }
-  `}
-`;
-
-const IconWrapper = styled(PageItem)``;
 
 /**
  *  @Component Pagination

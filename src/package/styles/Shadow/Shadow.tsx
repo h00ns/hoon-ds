@@ -1,17 +1,12 @@
-import styled from "@emotion/styled";
-import { Radius } from "../Radius";
 import { Shadow } from ".";
+import { shadowComponent } from "./index.css";
 
 type Props = {
   value: keyof typeof Shadow;
 };
 
-const Component = styled.div`
-  width: 320px;
-  height: 320px;
-  border-radius: ${Radius.MEDIUM};
-`;
-
 export default function ShadowComponent({ value }: Props) {
-  return <Component style={{ boxShadow: Shadow[value] }} />;
+  return (
+    <div className={shadowComponent} style={{ boxShadow: Shadow[value] }} />
+  );
 }
