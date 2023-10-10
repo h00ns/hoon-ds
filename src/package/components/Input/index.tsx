@@ -25,8 +25,10 @@ const Input = (
 };
 
 const Component = styled.input`
-  padding: 11px 12px;
+  width: 100%;
+  padding: 9px 12px;
   font-size: 14px;
+  line-height: 20px;
   box-sizing: border-box;
   border-radius: ${Radius.MEDIUM};
   border: 1px solid transparent;

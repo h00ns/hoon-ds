@@ -73,11 +73,12 @@ const Component = styled.div`
 `;
 
 const SelectBox = styled.div`
-  padding: 11px 12px;
+  padding: 9px 12px;
   border: 1px solid ${gray.gray3};
   box-sizing: border-box;
   border-radius: ${Radius.MEDIUM};
   font-size: 14px;
+  line-height: 20px;
   cursor: pointer;
 
   display: flex;

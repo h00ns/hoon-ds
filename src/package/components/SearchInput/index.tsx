@@ -22,7 +22,7 @@ const SearchInput = (
 };
 
 const Component = styled.div`
-  padding: 11px 12px;
+  padding: 9px 12px;
   background: ${white};
   box-sizing: border-box;
   border: 1px solid ${gray.gray3};
@@ -40,7 +40,9 @@ const IconWrapper = styled.div`
 `;
 
 const Input = styled.input`
+  flex: 1;
   font-size: 14px;
+  line-height: 20px;
   padding: 0;
 
   border: none;
