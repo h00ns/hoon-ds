@@ -27,6 +27,7 @@ const Textarea = (
 const Component = styled.textarea`
   padding: 12px;
   font-size: 14px;
+  box-sizing: border-box;
   border-radius: ${Radius.MEDIUM};
   border: 1px solid transparent;
   resize: none;

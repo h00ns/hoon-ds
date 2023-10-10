@@ -24,6 +24,7 @@ const SearchInput = (
 const Component = styled.div`
   padding: 11px 12px;
   background: ${white};
+  box-sizing: border-box;
   border: 1px solid ${gray.gray3};
   border-radius: ${Radius.MEDIUM};
 

@@ -96,6 +96,7 @@ const Component = styled.div<{ isDragging: boolean }>`
   padding: 24px;
   border-radius: ${Radius.MEDIUM};
   border: 1px dashed ${gray.gray3};
+  box-sizing: border-box;
   cursor: pointer;
 
   display: flex;

@@ -26,6 +26,7 @@ const Badge = (
 const Component = styled.div`
   padding: 6px 8px;
   border-radius: ${Radius.MEDIUM};
+  box-sizing: border-box;
   font-size: 12px;
   color: ${white};
 `;

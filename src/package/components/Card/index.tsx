@@ -19,6 +19,7 @@ const Component = styled.div`
   width: 100%;
   height: 100%;
   padding: 24px;
+  box-sizing: border-box;
   background: ${white};
   border-radius: ${Radius.MEDIUM};
   box-shadow: ${Shadow.MEDIUM};

@@ -26,6 +26,7 @@ const Alert = (
 
 const Component = styled.div`
   padding: 12px;
+  box-sizing: border-box;
   border-radius: ${Radius.MEDIUM};
 
   display: flex;
