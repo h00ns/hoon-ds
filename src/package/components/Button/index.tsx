@@ -11,6 +11,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly variant?: ButtonVariantType;
   readonly disabled?: boolean;
   readonly iconName?: IconName;
+  readonly fullWidth?: boolean;
 }
 
 const Button = (
@@ -19,6 +20,7 @@ const Button = (
     variant = ButtonVariant.PRIMARY,
     disabled = false,
     iconName,
+    fullWidth = false,
     ...buttonHtmlAttributes
   }: Props,
   ref: ForwardedRef<HTMLButtonElement>
@@ -33,6 +35,7 @@ const Button = (
       ref={ref}
       style={{ backgroundColor, color, borderColor }}
       hoverColor={hoverColor}
+      fullWidth={fullWidth}
       {...buttonHtmlAttributes}
     >
       {text}
@@ -44,10 +47,11 @@ const Button = (
   );
 };
 
-const Component = styled.button<{ hoverColor: string }>`
+const Component = styled.button<{ hoverColor: string; fullWidth: boolean }>`
   padding: 9px 12px;
   font-size: 14px;
   line-height: 20px;
+  font-weight: 700;
   border-radius: ${Radius.MEDIUM};
   box-sizing: border-box;
   border: 1px solid transparent;
@@ -67,7 +71,12 @@ const Component = styled.button<{ hoverColor: string }>`
   `}
 
   display: flex;
+  justify-content: center;
+  align-items: center;
   column-gap: 8px;
+
+  /* is FullWidth */
+  ${({ fullWidth }) => fullWidth && `width: 100%;`}
 `;
 
 /**

@@ -6,9 +6,6 @@ import { icons } from "../Icon/icons";
 const meta: Meta<typeof Button> = {
   title: "Components/Button",
   component: Button,
-  parameters: {
-    layout: "centered",
-  },
   tags: ["autodocs"],
   argTypes: {
     variant: {
@@ -33,6 +30,9 @@ const meta: Meta<typeof Button> = {
       control: "select",
       options: ["", ...Object.keys(icons)],
     },
+    fullWidth: {
+      description: "Button의 width를 100%로 설정합니다.",
+    },
   },
 };
 
@@ -42,6 +42,7 @@ type Story = StoryObj<typeof meta>;
 const commonArgs = {
   text: "Button",
   disabled: false,
+  fullWidth: false,
 };
 
 export const Primary: Story = {
