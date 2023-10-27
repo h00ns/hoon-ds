@@ -83,6 +83,9 @@ declare const icons: {
     trash: react.FC<react.SVGProps<SVGSVGElement>>;
     upload: react.FC<react.SVGProps<SVGSVGElement>>;
     "warning-triangle": react.FC<react.SVGProps<SVGSVGElement>>;
+    plus: react.FC<react.SVGProps<SVGSVGElement>>;
+    logout: react.FC<react.SVGProps<SVGSVGElement>>;
+    statistics: react.FC<react.SVGProps<SVGSVGElement>>;
 };
 type IconName = keyof typeof icons;
 
@@ -91,6 +94,7 @@ interface Props$e extends ButtonHTMLAttributes<HTMLButtonElement> {
     readonly variant?: ButtonVariantType;
     readonly disabled?: boolean;
     readonly iconName?: IconName;
+    readonly fullWidth?: boolean;
 }
 /**
  *  @Component Button

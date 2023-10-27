@@ -33,6 +33,7 @@ const Button = (
   return (
     <Component
       ref={ref}
+      disabled={disabled}
       style={{ backgroundColor, color, borderColor }}
       hoverColor={hoverColor}
       fullWidth={fullWidth}

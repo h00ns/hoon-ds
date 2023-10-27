@@ -25,6 +25,7 @@ const Input = (
 };
 
 const Component = styled.input`
+  flex: 1;
   width: 100%;
   padding: 9px 12px;
   font-size: 14px;

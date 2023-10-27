@@ -8,7 +8,7 @@ export const useGetButtonProps = (
 ) => {
   const [backgroundColor, color, borderColor, hoverColor] = useMemo(() => {
     if (disabled) {
-      return [gray.gray3, gray.gray5, gray.gray3, gray.gray1];
+      return [gray.gray3, gray.gray5, gray.gray3, gray.gray3];
     }
 
     switch (variant) {

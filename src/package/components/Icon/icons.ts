@@ -12,6 +12,9 @@ import { ReactComponent as Search } from "./assets/Search.svg";
 import { ReactComponent as Trash } from "./assets/Trash.svg";
 import { ReactComponent as Upload } from "./assets/Upload.svg";
 import { ReactComponent as WarningTriangle } from "./assets/WarningTriangle.svg";
+import { ReactComponent as Plus } from "./assets/Plus.svg";
+import { ReactComponent as Logout } from "./assets/Logout.svg";
+import { ReactComponent as Statistics } from "./assets/Statistics.svg";
 
 export const icons = {
   calendar: Calendar,
@@ -28,6 +31,9 @@ export const icons = {
   trash: Trash,
   upload: Upload,
   "warning-triangle": WarningTriangle,
+  plus: Plus,
+  logout: Logout,
+  statistics: Statistics,
 };
 
 export type IconName = keyof typeof icons;
