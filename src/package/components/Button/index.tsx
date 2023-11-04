@@ -6,7 +6,7 @@ import { IconName } from "../Icon/icons";
 import Icon from "../Icon";
 import { Radius } from "../../styles/Radius";
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly text: string;
   readonly variant?: ButtonVariantType;
   readonly disabled?: boolean;
