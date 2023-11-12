@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { ForwardedRef, InputHTMLAttributes, forwardRef } from "react";
-import { InputVariant, InputVariantType } from "./constants";
-import { useGetInputProps } from "./hooks";
+import { InputVariant, InputVariantType } from "./types";
 import { Radius } from "../../styles/Radius";
+import { black, gray, primary, red, white } from "../../styles/Color";
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
   readonly variant?: InputVariantType;
@@ -12,11 +12,9 @@ const Input = (
   { variant = InputVariant.DEFAULT, ...inputHtmlAttributes }: Props,
   ref: ForwardedRef<HTMLInputElement>
 ) => {
-  const [backgroundColor, borderColor, color] = useGetInputProps(variant);
-
   return (
     <Component
-      style={{ backgroundColor, borderColor, color }}
+      style={{ ...styleProps[variant] }}
       disabled={variant === InputVariant.FIXED}
       {...inputHtmlAttributes}
       ref={ref}
@@ -38,6 +36,24 @@ const Component = styled.input`
     outline: none;
   }
 `;
+
+const styleProps = {
+  [InputVariant.DEFAULT]: {
+    backgroundColor: white,
+    borderColor: gray.gray3,
+    color: black,
+  },
+  [InputVariant.ERROR]: {
+    backgroundColor: white,
+    borderColor: red.red3,
+    color: red.red3,
+  },
+  [InputVariant.FIXED]: {
+    backgroundColor: gray.gray1,
+    borderColor: "transparent",
+    color: primary.gray,
+  },
+};
 
 /**
  *  @Component Input

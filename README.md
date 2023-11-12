@@ -1,7 +1,5 @@
 # hoon-ds
 
-23.09.02 ~ develop...
-
 ### document
 
 [Storybook](https://hoons.site) <br />

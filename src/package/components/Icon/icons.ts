@@ -15,6 +15,15 @@ import { ReactComponent as WarningTriangle } from "./assets/WarningTriangle.svg"
 import { ReactComponent as Plus } from "./assets/Plus.svg";
 import { ReactComponent as Logout } from "./assets/Logout.svg";
 import { ReactComponent as Statistics } from "./assets/Statistics.svg";
+import { ReactComponent as ArrowRightBox } from "./assets/ArrowRightBox.svg";
+import { ReactComponent as Money } from "./assets/Money.svg";
+import { ReactComponent as Bus } from "./assets/Bus.svg";
+import { ReactComponent as Card } from "./assets/Card.svg";
+import { ReactComponent as Cart } from "./assets/Cart.svg";
+import { ReactComponent as Food } from "./assets/Food.svg";
+import { ReactComponent as Heart } from "./assets/Heart.svg";
+import { ReactComponent as Music } from "./assets/Music.svg";
+import { ReactComponent as Plug } from "./assets/Plug.svg";
 
 export const icons = {
   calendar: Calendar,
@@ -34,6 +43,15 @@ export const icons = {
   plus: Plus,
   logout: Logout,
   statistics: Statistics,
+  "arrow-right-box": ArrowRightBox,
+  money: Money,
+  bus: Bus,
+  card: Card,
+  cart: Cart,
+  food: Food,
+  heart: Heart,
+  music: Music,
+  plug: Plug,
 };
 
 export type IconName = keyof typeof icons;

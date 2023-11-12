@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import { ButtonHTMLAttributes, ForwardedRef, forwardRef } from "react";
-import { ButtonVariant, ButtonVariantType } from "./constants";
-import { useGetButtonProps } from "./hooks";
+import { ButtonVariant, ButtonVariantType } from "./types";
 import { IconName } from "../Icon/icons";
 import Icon from "../Icon";
 import { Radius } from "../../styles/Radius";
+import { blue, gray, green, primary, red, white } from "../../styles/Color";
 
 export interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   readonly text: string;
@@ -25,16 +25,15 @@ const Button = (
   }: Props,
   ref: ForwardedRef<HTMLButtonElement>
 ) => {
-  const [backgroundColor, color, borderColor, hoverColor] = useGetButtonProps(
-    variant,
-    disabled
-  );
+  const { hoverColor, ...buttonStyleProps } = disabled
+    ? disabledStyleProps
+    : styleProps[variant];
 
   return (
     <Component
       ref={ref}
       disabled={disabled}
-      style={{ backgroundColor, color, borderColor }}
+      style={{ ...buttonStyleProps }}
       hoverColor={hoverColor}
       fullWidth={fullWidth}
       {...buttonHtmlAttributes}
@@ -42,7 +41,9 @@ const Button = (
       {text}
 
       {/* only icon */}
-      {iconName && <Icon size={"16px"} name={iconName} stroke={color} />}
+      {iconName && (
+        <Icon size={"16px"} name={iconName} stroke={buttonStyleProps.color} />
+      )}
       {/* only icon end */}
     </Component>
   );
@@ -79,6 +80,46 @@ const Component = styled.button<{ hoverColor: string; fullWidth: boolean }>`
   /* is FullWidth */
   ${({ fullWidth }) => fullWidth && `width: 100%;`}
 `;
+
+const styleProps = {
+  [ButtonVariant.PRIMARY]: {
+    backgroundColor: primary.blue,
+    color: white,
+    borderColor: "transparent",
+    hoverColor: blue.blue3,
+  },
+  [ButtonVariant.OUTLINE]: {
+    backgroundColor: white,
+    color: gray.gray6,
+    borderColor: gray.gray3,
+    hoverColor: gray.gray1,
+  },
+  [ButtonVariant.RED]: {
+    backgroundColor: red.red3,
+    color: white,
+    borderColor: "transparent",
+    hoverColor: red.red2,
+  },
+  [ButtonVariant.GRAY]: {
+    backgroundColor: gray.gray6,
+    color: white,
+    borderColor: "transparent",
+    hoverColor: gray.gray5,
+  },
+  [ButtonVariant.GREEN]: {
+    backgroundColor: green.green3,
+    color: white,
+    borderColor: "transparent",
+    hoverColor: green.green2,
+  },
+};
+
+const disabledStyleProps = {
+  backgroundColor: gray.gray3,
+  color: gray.gray5,
+  borderColor: gray.gray3,
+  hoverColor: gray.gray3,
+};
 
 /**
  *  @Component Button

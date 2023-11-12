@@ -14,7 +14,7 @@ declare const AlertVariant: {
 };
 type AlertVariantType = (typeof AlertVariant)[keyof typeof AlertVariant];
 
-interface Props$g extends HTMLAttributes<HTMLDivElement> {
+interface Props$h extends HTMLAttributes<HTMLDivElement> {
     readonly variant?: AlertVariantType;
     readonly children: React.ReactNode;
 }
@@ -23,7 +23,7 @@ interface Props$g extends HTMLAttributes<HTMLDivElement> {
  *  @props variant - Alert 스타일 {AlertVariantType}
  *  @props children - Alert Component Children {React.ReactNode}
  */
-declare const _default$f: react.ForwardRefExoticComponent<Props$g & react.RefAttributes<HTMLDivElement>>;
+declare const _default$f: react.ForwardRefExoticComponent<Props$h & react.RefAttributes<HTMLDivElement>>;
 
 /**
  *  @Constants BadgeVariant
@@ -40,7 +40,7 @@ declare const BadgeVariant: {
 };
 type BadgeVariantType = (typeof BadgeVariant)[keyof typeof BadgeVariant];
 
-interface Props$f extends HTMLAttributes<HTMLDivElement> {
+interface Props$g extends HTMLAttributes<HTMLDivElement> {
     readonly variant: BadgeVariantType;
     readonly text: string;
 }
@@ -49,7 +49,7 @@ interface Props$f extends HTMLAttributes<HTMLDivElement> {
  *  @props variant - 뱃지 스타일 {BadgeVariantType}
  *  @props text - 뱃지 텍스트 {string}
  */
-declare const _default$e: react.ForwardRefExoticComponent<Props$f & react.RefAttributes<HTMLDivElement>>;
+declare const _default$e: react.ForwardRefExoticComponent<Props$g & react.RefAttributes<HTMLDivElement>>;
 
 /**
  *  @Constants ButtonVariant
@@ -86,10 +86,19 @@ declare const icons: {
     plus: react.FC<react.SVGProps<SVGSVGElement>>;
     logout: react.FC<react.SVGProps<SVGSVGElement>>;
     statistics: react.FC<react.SVGProps<SVGSVGElement>>;
+    "arrow-right-box": react.FC<react.SVGProps<SVGSVGElement>>;
+    money: react.FC<react.SVGProps<SVGSVGElement>>;
+    bus: react.FC<react.SVGProps<SVGSVGElement>>;
+    card: react.FC<react.SVGProps<SVGSVGElement>>;
+    cart: react.FC<react.SVGProps<SVGSVGElement>>;
+    food: react.FC<react.SVGProps<SVGSVGElement>>;
+    heart: react.FC<react.SVGProps<SVGSVGElement>>;
+    music: react.FC<react.SVGProps<SVGSVGElement>>;
+    plug: react.FC<react.SVGProps<SVGSVGElement>>;
 };
 type IconName = keyof typeof icons;
 
-interface Props$e extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props$f extends ButtonHTMLAttributes<HTMLButtonElement> {
     readonly text: string;
     readonly variant?: ButtonVariantType;
     readonly disabled?: boolean;
@@ -102,7 +111,13 @@ interface Props$e extends ButtonHTMLAttributes<HTMLButtonElement> {
  *  @props variant - 버튼 스타일 {ButtonVariant}
  *  @props disabled - 버튼 비활성화 {boolean}
  */
-declare const _default$d: react.ForwardRefExoticComponent<Props$e & react.RefAttributes<HTMLButtonElement>>;
+declare const _default$d: react.ForwardRefExoticComponent<Props$f & react.RefAttributes<HTMLButtonElement>>;
+
+interface Props$e extends HTMLAttributes<HTMLDivElement> {
+    readonly button1: React.ReactNode;
+    readonly button2: React.ReactNode;
+}
+declare function ButtonGroup({ button1, button2 }: Props$e): react_jsx_runtime.JSX.Element;
 
 interface Props$d extends HTMLAttributes<HTMLDivElement> {
     readonly children: React.ReactNode;
@@ -396,4 +411,4 @@ declare const Shadow: {
     readonly MEDIUM: "0px 4px 12px rgba(0, 0, 0, 0.16), 4px 8px 28px rgba(0, 0, 0, 0.08)";
 };
 
-export { _default$f as Alert, AlertVariant, _default$e as Badge, BadgeVariant, _default$d as Button, ButtonVariant, _default$c as Card, _default$b as Dropdown, _default$a as FileUpload, Icon, Indicator, _default$9 as Input, InputVariant, _default$8 as Modal, _default$7 as Pagination, Radius, _default$6 as SearchInput, Shadow, _default$5 as Skeleton, _default$4 as Tabbar, _default$3 as Table, _default$2 as Textarea, TextareaVariant, _default$1 as Toggle, TypoVariant, _default as Typography, black, blue, gray, green, primary, red, white };
+export { _default$f as Alert, AlertVariant, _default$e as Badge, BadgeVariant, _default$d as Button, ButtonGroup, ButtonVariant, _default$c as Card, _default$b as Dropdown, _default$a as FileUpload, Icon, Indicator, _default$9 as Input, InputVariant, _default$8 as Modal, _default$7 as Pagination, Radius, _default$6 as SearchInput, Shadow, _default$5 as Skeleton, _default$4 as Tabbar, _default$3 as Table, _default$2 as Textarea, TextareaVariant, _default$1 as Toggle, TypoVariant, _default as Typography, black, blue, gray, green, primary, red, white };

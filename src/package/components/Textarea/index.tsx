@@ -1,8 +1,8 @@
 import { ForwardedRef, TextareaHTMLAttributes, forwardRef } from "react";
-import { TextareaVariant, TextareaVariantType } from "./constants";
+import { TextareaVariant, TextareaVariantType } from "./types";
 import styled from "@emotion/styled";
 import { Radius } from "../../styles/Radius";
-import { useGetTextareaProps } from "./hooks";
+import { black, gray, primary, red, white } from "../../styles/Color";
 
 interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   readonly variant?: TextareaVariantType;
@@ -12,11 +12,9 @@ const Textarea = (
   { variant = TextareaVariant.DEFAULT, ...textareaHtmlAttributes }: Props,
   ref: ForwardedRef<HTMLTextAreaElement>
 ) => {
-  const [backgroundColor, borderColor, color] = useGetTextareaProps(variant);
-
   return (
     <Component
-      style={{ backgroundColor, borderColor, color }}
+      style={{ ...styleProps[variant] }}
       ref={ref}
       disabled={variant === TextareaVariant.FIXED}
       {...textareaHtmlAttributes}
@@ -36,6 +34,24 @@ const Component = styled.textarea`
     outline: none;
   }
 `;
+
+const styleProps = {
+  [TextareaVariant.DEFAULT]: {
+    backgroundColor: white,
+    borderColor: gray.gray3,
+    color: black,
+  },
+  [TextareaVariant.ERROR]: {
+    backgroundColor: white,
+    borderColor: red.red3,
+    color: red.red3,
+  },
+  [TextareaVariant.FIXED]: {
+    backgroundColor: gray.gray1,
+    borderColor: "transparent",
+    color: primary.gray,
+  },
+};
 
 /**
  *  @Component Textarea

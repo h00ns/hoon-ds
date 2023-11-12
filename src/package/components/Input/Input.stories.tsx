@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { InputVariant } from "./constants";
+import { InputVariant } from "./types";
 import Input from ".";
 
 const meta: Meta<typeof Input> = {
