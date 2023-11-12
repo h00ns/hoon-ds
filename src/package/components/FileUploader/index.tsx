@@ -10,7 +10,7 @@ import { Radius } from "../../styles/Radius";
 import { blue, gray, primary } from "../../styles/Color";
 import Icon from "../Icon";
 import Button from "../Button";
-import { ButtonVariant } from "../Button/constants";
+import { ButtonVariant } from "../Button/types";
 import useDragAndDrop from "./useDragAndDrop";
 
 interface Props extends InputHTMLAttributes<HTMLDivElement> {

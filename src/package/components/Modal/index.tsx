@@ -2,7 +2,7 @@ import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import styled from "@emotion/styled";
 import { keyframes } from "@emotion/react";
 import Typography from "../Typography";
-import { TypoVariant } from "../Typography/constants";
+import { TypoVariant } from "../Typography/types";
 import { white } from "../../styles/Color";
 import { Radius } from "../../styles/Radius";
 

@@ -1,9 +1,9 @@
 import styled from "@emotion/styled";
 import { ForwardedRef, HTMLAttributes, forwardRef } from "react";
 import Icon from "../Icon";
-import { AlertVariant, AlertVariantType } from "./constants";
-import { useGetAlertProps } from "./hooks";
+import { AlertVariant, AlertVariantType } from "./types";
 import { Radius } from "../../styles/Radius";
+import { blue, primary, red } from "../../styles/Color";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   readonly variant?: AlertVariantType;
@@ -14,10 +14,13 @@ const Alert = (
   { variant = AlertVariant.PRIMARY, children, ...htmlAttributes }: Props,
   ref: ForwardedRef<HTMLDivElement>
 ) => {
-  const [backgroundColor, iconColor] = useGetAlertProps(variant);
+  const iconColor = {
+    [AlertVariant.PRIMARY]: primary.blue,
+    [AlertVariant.ERROR]: red.red3,
+  }[variant];
 
   return (
-    <Component style={{ backgroundColor }} ref={ref} {...htmlAttributes}>
+    <Component style={{ ...styleProps[variant] }} ref={ref} {...htmlAttributes}>
       <Icon name="warning-triangle" stroke="transparent" fill={iconColor} />
       {children}
     </Component>
@@ -33,6 +36,15 @@ const Component = styled.div`
   align-items: center;
   column-gap: 12px;
 `;
+
+const styleProps = {
+  [AlertVariant.PRIMARY]: {
+    backgroundColor: blue.blue1,
+  },
+  [AlertVariant.ERROR]: {
+    backgroundColor: red.red1,
+  },
+};
 
 /**
  *  @Component Alert

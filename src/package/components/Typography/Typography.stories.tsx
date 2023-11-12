@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { TypoVariant } from "./constants";
+import { TypoVariant } from "./types";
 import Typography from ".";
 import { black } from "../../styles/Color";
 
